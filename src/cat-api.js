@@ -6,12 +6,25 @@ axios.defaults.headers.common['x-api-key'] =
 const catUrl = 'https://api.thecatapi.com/v1/breeds';
 
 
-function fetchBreeds() {
-    const response = axios.get('https://api.thecatapi.com/v1/breeds')
-    return response;
+async function fetchBreeds() {
+   
+    try {
+        const response = await axios.get('https://api.thecatapi.com/v1/breeds')
+        return response;
+    } catch (error) {
+        console.log(error.message);
+        
+    }
 }
 
-function fetchCatByBreed(breedId) {
+async function fetchCatByBreed(breedId) {
+    try {
+        const response = await axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`);
+        return response;
+    } catch (error) {
+        console.log(error.message);
+        
+    }
     
 }
 
