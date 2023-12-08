@@ -7,23 +7,12 @@ const catUrl = 'https://api.thecatapi.com/v1/breeds';
 
 
 function fetchBreeds() {
-    return axios
-        .get(`${catUrl}`)
-        .then(response => response.data)
-        .catch(error => {
-            console.log(error);
-            throw error;
-        });
+    const response = axios.get('https://api.thecatapi.com/v1/breeds')
+    return response;
 }
 
 function fetchCatByBreed(breedId) {
-    return axios
-        .get(`${catUrl}/images/search?breed_ids=${breedId}`)
-        .then(response => response.data)
-        .catch(error => {
-            console.log(error);
-            throw error;
-        });
+    
 }
 
-export { fetchCatByBreed, fetchBreeds };
+export { fetchBreeds, fetchCatByBreed};
