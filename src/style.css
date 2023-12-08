@@ -31,3 +31,14 @@
 .is-hidden {
     display: none;
 }
+
+.cat-info{
+  display: flex;
+  margin: 20px;
+}
+.breed-select{
+  margin-bottom: 30px;
+}
+.container{
+  text-align:left;
+}
